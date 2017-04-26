@@ -1,0 +1,1231 @@
+﻿<!DOCTYPE html>
+<!--GIT https://github.com/Mpalavsky/Projekt-ZJ -->
+<html lang="cs" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Phone settings</title>
+    <style> 
+table {
+    border-collapse: collapse;
+    width: 70%;
+        font-size:small;
+
+        }
+
+th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid black;
+            }
+
+    </style>
+</head>
+
+
+<body>
+    
+ <header>
+     <h1>Smartphone settings</h1>
+     <nav>
+     <h3>Obsah</h3>
+     <ul>
+         <li><a href="#uvod">1. Úvod</a></li>
+         <li><a href="#metod">2. Metodika</a></li>
+         <li><a href="#ele">3. Elementy</a>
+         <ul>
+             <li><a href="#net">3.1 Element network</a></li>
+             <li><a href="#sou">3.2 Element sound</a></li>
+             <li><a href="#not">3.3 Element notification</a></li>
+             <li><a href="#loc">3.4 Element lockscreen</a></li>
+             <li><a href="#dis">3.5 Element display</a></li>
+             <li><a href="#reg">3.6 Element region</a></li>
+             <li><a href="#sec">3.7 Element secure</a></li>
+             <li><a href="#cam">3.8 Element camera</a>
+                 <ul>
+                     <li><a href="#eff">3.8a Element camera/effects</a></li>
+                    
+                 </ul>
+             </li>
+             <li><a href="#gen">3.7 Element secure</a></li>
+
+         </ul>
+             
+
+         </li>
+         <li><a href="#atr">4. Atributy</a></li>
+         <li><a href="#dek">5. Deklarace typů</a></li>
+         <li><a href="#tran">6. Transformace</a></li>
+         <li><a href="#git">7. GIT</a></li>
+         <li><a href="#zav">8. Závěr</a></li>
+     </ul>
+
+
+
+
+ </nav>
+        
+ </header>
+ 
+<main>
+    <section id="uvod">
+        <h2>1. Úvod</h2> 
+        <p>XML které zde je popsáno slouží jako konfigurační soubor pro smartphone.</p>
+    </section>
+
+    <section id="metod">
+         
+             <h2>2. Metodika</h2> 
+             <p>Zdroje: jako zdroje jsem použil <b>přednášky, znalosti a zápisky získané na cvičení a prezentací z Moodlu</b> a <b>dále knihu XML pro každého ISBN 80-7169-860-1</b></p>
+             <p>Aplikace: Využití prostředí <b>Microsoft Visual Studio Code</b> a <b>NetBeans</b> na ověření schémat.</p>
+          
+         
+    </section>
+
+    <section id="ele">
+      <h2>3. Elementy</h2>
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >phoneSettings</td>
+            <td >xs:complextype</td>
+            <td >Nastavení telefonu</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">name</td>
+            <td  style="background-color: #e2e2e2">xs:string</td>
+            <td style="background-color: #e2e2e2">Název nastavení pro daný smartphone</td>            
+        </tr>
+        <tr >
+           
+            <td >network</td>
+            <td >xs:complextype</td>
+            <td >Nastavení pro sítě a připojení</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">sound</td>
+            <td  style="background-color: #e2e2e2">xs:complextype</td>
+            <td style="background-color: #e2e2e2">Nasatvení zvuku a profilů</td>            
+        </tr>
+        <tr>
+            <td>notification</td> 
+            <td >xs:complextype</td>       
+            <td >Různá nasatavení oznámení</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">lockscreen</td> 
+            <td style="background-color: #e2e2e2">xs:complextype</td> 
+            <td style="background-color: #e2e2e2">Změny zamykací obrazovky</td>          
+        </tr>
+        <tr>
+            <td>display</td>
+            <td >xs:complextype</td> 
+            <td >Nastavení vzhledu displaye</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">region</td>
+            <td style="background-color: #e2e2e2">xs:complextype</td> 
+            <td style="background-color: #e2e2e2">Nastavení umístění</td>           
+        </tr>
+        <tr>
+            <td>secure</td>
+            <td >xs:complextype</td> 
+            <td >Nastavení zabezpečení</td>            
+       </tr>
+          <tr>
+            <td style="background-color: #e2e2e2">camera</td>
+            <td style="background-color: #e2e2e2">xs:complextype</td> 
+            <td style="background-color: #e2e2e2">Nastavení fotoaparátu</td>           
+        </tr>
+        <tr>
+            <td>general</td>
+            <td >xs:complextype</td> 
+            <td >Obecné nastavení</td>            
+       </tr>
+
+
+
+
+
+       </table >
+ 
+
+
+
+    </section>
+
+
+
+   <section id="net">
+    <h3>3.1 Element network</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >buetooth</td>
+            <td >xs:boolean</td>
+            <td >Zapnutí, vypnutí bluetoothu</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">mobile network</td>
+            <td  style="background-color: #e2e2e2">xs:boolean</td>
+            <td style="background-color: #e2e2e2">Použití sítí</td>            
+        </tr>
+        <tr>
+            <td>hotspot</td> 
+            <td >xs:complexType</td>       
+            <td >Atributy pro maximum připojení a stav</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">tethering</td> 
+            <td style="background-color: #e2e2e2">xs:boolean</td> 
+            <td style="background-color: #e2e2e2">Sdílení sítě</td>          
+        </tr>
+        <tr>
+            <td>wifi</td>
+            <td >xs:boolean</td> 
+            <td >Zapnutí Wi-fi</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">gps</td>
+            <td style="background-color: #e2e2e2">xs:boolean</td> 
+            <td style="background-color: #e2e2e2">Povolení GPS lokalizace</td>           
+        </tr>
+        <tr>
+            <td>vpn</td>
+            <td >xs:complexType</td> 
+            <td >Atributy pro heslo ,ip adresu a stav</td>            
+       </tr>
+       </table >
+   </section>
+
+   <section id="sou">
+    <h3>3.2 Element sound</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >soundProfile</td>
+            <td >typeSoundProfile</td>
+            <td >Výběr zvukových profilů</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">masterVolume</td>
+            <td  style="background-color: #e2e2e2">type0to100</td>
+            <td style="background-color: #e2e2e2">Hlavní ovladač hlasitosti</td>            
+        </tr>
+        <tr>
+            <td>keysVolume</td> 
+            <td >type0to100</td>       
+            <td >Hlasitost kláves</td>            
+        </tr>
+       </table >
+   </section>
+    
+   <section id="not">
+    <h3>3.3 Element notification</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >ringtone</td>
+            <td >typeTone</td>
+            <td >Výběr vyzvánění</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">vibrations</td>
+            <td style="background-color: #e2e2e2">type0to10</td>
+            <td style="background-color: #e2e2e2">Stupeň vybrací</td>            
+        </tr>
+        <tr>
+            <td>soundWithVibrations</td> 
+            <td >xs:boolean</td>       
+            <td >Vibrovat se zvukem</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">doNotDisturb</td> 
+            <td style="background-color: #e2e2e2">xs:boolean</td> 
+            <td style="background-color: #e2e2e2">Zapnutí režimu nerušit</td>          
+        </tr>
+       </table >
+   </section>
+    <section id="loc">
+    <h3>3.4 Element lockscreen</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >notifOnLockscreen</td>
+            <td >xs:boolean</td>
+            <td >Oznámení na Lockscreenu</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">clockType</td>
+            <td style="background-color: #e2e2e2">xs:boolean</td>
+            <td style="background-color: #e2e2e2">Nastav dva motivy hodin</td>            
+        </tr>
+        <tr>
+            <td>lockType</td> 
+            <td >xs:boolean</td>       
+            <td >dva druhy uzamčení</td>            
+        </tr>
+        
+       </table >
+   </section>
+    <section id="dis">
+    <h3>3.5 Element display</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >scheme</td>
+            <td >typeScheme</td>
+            <td >Výběr schématu</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">wallpaper</td>
+            <td style="background-color: #e2e2e2">xs:complexType</td>
+            <td style="background-color: #e2e2e2">Výběr tapety</td>            
+        </tr>
+        <tr>
+            <td>font</td> 
+            <td >typeFontType</td>       
+            <td >Změna textů</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">brightness</td> 
+            <td style="background-color: #e2e2e2">type0to100</td> 
+            <td style="background-color: #e2e2e2">Nastavení podsvícení</td>          
+        </tr>
+        <tr>
+            <td>autoFlipScreen</td>
+            <td >xs:boolean</td> 
+            <td>Auto otočení displaye</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">intervalOfScreenStandbyTime</td>
+            <td style="background-color: #e2e2e2">xs:integer</td> 
+            <td style="background-color: #e2e2e2">čas vypnutí displaye</td>           
+        </tr>
+        <tr>
+            <td>screensasver</td>
+            <td >typeVariant</td> 
+            <td >Výběr spořiče</td>            
+       </tr>
+                  <tr>
+            <td style="background-color: #e2e2e2">color</td>
+            <td style="background-color: #e2e2e2">typeColor</td>
+            <td style="background-color: #e2e2e2">Změna barev</td>            
+        </tr>
+       
+       </table >
+   </section>
+    <section id="reg">
+    <h3>3.6 Elmement region</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >language</td>
+            <td >typeLanguage</td>
+            <td >Změna jazyka</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">timeFormats</td>
+            <td style="background-color: #e2e2e2">typeTimeFormats</td>
+            <td style="background-color: #e2e2e2">Časový formát</td>            
+        </tr>
+        <tr>
+            <td>useNetwork</td> 
+            <td >xs:boolean</td>       
+            <td >Využít síť pro čas a datum</td>            
+        </tr>
+
+       </table >
+   </section>
+
+     <section id="sec">
+    <h3>3.7 Elmement secure</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >useBiometric</td>
+            <td >xs:boolean</td>
+            <td >Ověření přes otisk prstů</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">forgetPasswords</td>
+            <td style="background-color: #e2e2e2">xs:complexType</td>
+            <td style="background-color: #e2e2e2">Zapomenout hesla</td>            
+        </tr>
+        <tr>
+            <td >usePin</td> 
+            <td>xs:boolean</td>       
+            <td  >Používat pinkód</td>            
+        </tr>
+
+       </table >
+   </section>
+     <section id="cam">
+    <h3>3.8 Elmement camera</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >format</td>
+            <td >typeFormat</td>
+            <td >Typy formátů</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">flash</td>
+            <td style="background-color: #e2e2e2">typeFlash</td>
+            <td style="background-color: #e2e2e2">Priorita blesku</td>            
+        </tr>
+        <tr>
+            <td>timer</td> 
+            <td >typeMemor</td>       
+            <td >Nastaví časovač</td>            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">effects</td> 
+            <td style="background-color: #e2e2e2">xs:complexType</td> 
+            <td style="background-color: #e2e2e2">Různé efekty</td>          
+        </tr>
+       
+       </table >
+   </section>
+
+     <section id="eff">
+    <h3>3.8a Elmement effects</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >hdr</td>
+            <td >xs:boolean</td>
+            <td >Zapne HDR</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2">sepia</td>
+            <td style="background-color: #e2e2e2">xs:boolean</td>
+            <td style="background-color: #e2e2e2">Zapne Sépia barvy</td>            
+        </tr>
+        <tr>
+            <td>distorted</td> 
+            <td >xs:boolean</td>       
+            <td >Zapne rozostření</td>            
+        </tr>
+        
+       
+       </table >
+   </section>
+
+     <section id="gen">
+    <h3>3.9 Elmement General</h3>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ elementu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+           
+            <td >memoryPriority</td>
+            <td >typeMemory</td>
+            <td >Preferovaná paměť</td> 
+            
+        </tr>
+        <tr>
+            <td style="background-color: #e2e2e2" >ledFlashlight</td>
+            <td style="background-color: #e2e2e2">xs:boolean</td>
+            <td style="background-color: #e2e2e2">Zapne led světlo</td>            
+        </tr>
+       </table >
+   </section>
+
+     <section id="atr">
+    <h2>4. Atributy</h2>   
+      <table >
+ 
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Název</td>
+            <td style="background-color: #ffcc99; font-weight:bold">Typ atributu</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Lokace element</td> 
+            <td style="background-color: #ffcc99; font-weight:bold">Popis</td>           
+        </tr>
+        <tr >
+            <td >name</td> 
+            <td >xs:string</td>
+            <td >profile</td>
+            <td >Jméno profilu</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td> id</td> 
+            <td  >xs:integer</td>
+            <td  >profile</td>
+            <td  >Klíč profilu</td>            
+        </tr>
+          <tr >
+            <td >state</td> 
+            <td >xs:boolean</td>
+            <td >network</td>
+            <td >Síť on/off</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td >password</td> 
+            <td >xs:string</td>
+            <td >hotspot</td>
+            <td  >Heslo hotspotu</td>            
+        </tr>
+          <tr >
+            <td  >maxCountOfConnection</td> 
+            <td  >xs:integer</td>
+            <td  >hotspot</td>
+            <td >Maxima spojení</td> 
+            
+        </tr >
+        <tr style="background-color: #e2e2e2">
+            <td >state</td> 
+            <td >xs:boolean</td>
+            <td >hotspot</td>
+            <td  >Hotspot on/off</td>            
+        </tr>
+          <tr >
+            <td  >ip</td> 
+            <td  >xs:integer</td>
+            <td  >vpn</td>
+            <td >Ip adresa</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td >state</td> 
+            <td >xs:boolean</td>
+            <td >vpn</td>
+            <td  >VPN on/off</td>            
+        </tr>
+          <tr >
+            <td  >state</td> 
+            <td  >xs:boolean</td>
+            <td  >lockscreen</td>
+            <td >Zamykání obrazovky on/off</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td >picture</td> 
+            <td >typePicture</td>
+            <td >wallpaper</td>
+            <td  >Výběr tapety</td>            
+        </tr>
+          <tr >
+            <td  >fontType</td> 
+            <td  >typeFontType</td>
+            <td  >font</td>
+            <td >Design fontu</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td  >size</td> 
+            <td  >xs:integer</td>
+            <td  >font</td>
+            <td  >Velikost fontu</td>            
+        </tr>
+          <tr >
+            <td >variant </td> 
+            <td >typeVariant</td>
+            <td >screensaver</td>
+            <td >Typ spořiče</td> 
+            
+        </tr>
+        <tr style="background-color: #e2e2e2">
+            <td   >state</td> 
+            <td  >xs:boolean</td>
+            <td   >screensaver</td>
+            <td >Spořič on/off</td>            
+        </tr>
+
+        <tr  >
+            <td >type</td> 
+            <td >typeColor</td>
+            <td >color</td>
+            <td >Speciální barvy</td> 
+            
+        </tr>
+
+        <tr style="background-color: #e2e2e2">
+            <td  >state</td> 
+            <td  >xs:boolean</td>
+            <td  >color</td>
+            <td>Barvy on/off</td> 
+            
+        </tr>
+
+          
+        <tr  >
+            <td >periodInDays</td> 
+            <td >xs:integer</td>
+            <td >forgetPassword</td>
+            <td >Interval mazání ve dnech</td> 
+            
+        </tr>
+
+        <tr style="background-color: #e2e2e2">
+            <td >state</td> 
+            <td >xs:boolean</td>
+            <td >forgetPassword</td>
+            <td >Zapomenou hesla on/off</td> 
+            
+        </tr>
+
+          
+        <tr  >
+            <td >delay</td> 
+            <td >xs:integer</td>
+            <td >timer</td>
+            <td >Zpoždění fotky</td> 
+            
+        </tr>
+
+        <tr style="background-color: #e2e2e2">
+            <td >state</td> 
+            <td >xs:boolean</td>
+            <td >timer</td>
+            <td >Časovač on/off</td> 
+            
+        </tr>
+
+          
+        <tr  >
+            <td >status</td> 
+            <td >xs:boolean</td>
+            <td >hdr</td>
+            <td >HDR on/off</td> 
+            
+        </tr>
+
+        <tr style="background-color: #e2e2e2">
+            <td >status</td> 
+            <td >xs:boolean</td>
+            <td >sepia</td>
+            <td >Sepia on/off</td> 
+            
+        </tr>
+         <tr >
+            <td >status</td> 
+            <td >xs:boolean</td>
+            <td >distorted</td>
+            <td >Distorted on/off</td>             
+        </tr>     
+       </table >
+         </section>
+
+      <section id="dek">
+
+    <h2>5. Deklarace typů</h2>   
+
+           
+
+         <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td>
+            </tr>
+             <tr>
+             <td>typeTone</td>
+             </tr>             
+             <tr>
+
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+
+        <tr>
+            
+
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td  style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >melody1</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >melody2</td>           
+        </tr>
+        <tr>        
+            <td >melody3</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >melody4</td>           
+        </tr>
+        <tr>        
+            <td >melody7</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >melody8</td>           
+        </tr>
+        <tr>        
+            <td >melody10</td>           
+        </tr> 
+                
+        </table>
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeSoundProfile</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >mute</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >1</td>           
+        </tr>
+        <tr>        
+            <td >2</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >3</td>           
+        </tr>
+        <tr>        
+            <td >4</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >5</td>           
+        </tr>
+             
+        </table>
+
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+             <td >typeScheme</td>
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >light</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >dark</td>           
+        </tr>
+        <tr>        
+            <td >grey</td>           
+        </tr>       
+        
+        </table>
+
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typePicture</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >pic1</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >pic2</td>           
+        </tr>
+        <tr>        
+            <td >pic3</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >pic4</td>           
+        </tr>
+        <tr>        
+            <td >pic5</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >pic6</td>           
+        </tr>
+        <tr>        
+            <td >pic7</td>           
+        </tr>  
+               <tr style="background-color: #e2e2e2"> 
+            <td >pic8</td>           
+        </tr>
+        <tr>        
+            <td >pic9</td>           
+        </tr>       
+          
+        </table>
+
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeFontType</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >calibri</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >timesnewromain</td>           
+        </tr>
+        <tr>        
+            <td >arial</td>           
+        </tr>       
+           
+        </table>
+
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+             <td >typeTimeFormat</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+           
+            <td >xs:integer</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >12</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >24</td>           
+        </tr>
+         
+        </table>
+
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+             <td >type0to100</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+           
+            <td >xs:integer</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >od 0</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td>do 100</td>           
+        </tr>
+       
+        </table>
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >type0to10</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:integer</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >od 0</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >do 10</td>           
+        </tr>
+             
+        </table>
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeLanguage</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >czech</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >english</td>           
+        </tr>
+        <tr>        
+            <td>spanish</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >french</td>           
+        </tr>
+        <tr>        
+            <td >pascal</td>           
+        </tr>       
+   
+          
+        </table>
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+             <td >typeVariant</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+           
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >forest</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >sea</td>           
+        </tr>
+        <tr>        
+            <td >house</td>           
+        </tr>       
+        <tr style="background-color: #e2e2e2"> 
+            <td >shore</td>           
+        </tr>
+        <tr>        
+            <td >gallery</td>           
+        </tr>       
+        
+        </table>
+          <br/> 
+           <table>
+
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeColor</td> 
+             </tr>             
+             <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+        </tr>
+        <tr>
+            
+            <td >xs:string</td>
+           
+            
+        </tr>
+        <tr>
+            <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+        </tr>
+        <tr>        
+            <td >monochrome</td>           
+        </tr>
+        <tr style="background-color: #e2e2e2"> 
+            <td >inverted</td>           
+        </tr>
+        
+        </table>
+
+
+          <br/> 
+           <table>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+              <td >typeFormat</td> 
+             </tr>             
+             <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+                </tr>
+                <tr>
+                  
+                    <td >xs:string</td>
+           
+            
+                </tr>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+                </tr>
+                <tr>        
+                    <td >jpeg</td>           
+                </tr>
+                <tr style="background-color: #e2e2e2"> 
+                    <td >gif</td>           
+                </tr>
+                <tr>        
+                    <td >raw</td>           
+                </tr>       
+                <tr style="background-color: #e2e2e2"> 
+                    <td >png</td>           
+                </tr>
+                <tr>        
+                    <td >dng</td>           
+                </tr>       
+                 
+        </table>
+
+          <br/> 
+           <table>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeFlash</td>
+             </tr>             
+             <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+                </tr>
+                <tr>
+                     
+                    <td >xs:string</td>
+           
+            
+                </tr>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+                </tr>
+                <tr>        
+                    <td >true</td>           
+                </tr>
+                <tr style="background-color: #e2e2e2"> 
+                    <td >false</td>           
+                </tr>
+                <tr>        
+                    <td >auto</td>           
+                </tr>       
+           
+        </table>
+
+          <br/> 
+           <table>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Datový typ</td></tr>
+             <tr>
+            <td >typeMemory</td> 
+             </tr>             
+             <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Základ</td> 
+                  
+                </tr>
+                <tr>
+                    
+                    <td >xs:string</td>
+           
+            
+                </tr>
+                <tr>
+                    <td style="background-color: #ffcc99; font-weight:bold">Povolené hodnoty</td>                 
+                </tr>
+                <tr>        
+                    <td >sd</td>           
+                </tr>
+                <tr style="background-color: #e2e2e2"> 
+                    <td >internal</td>           
+                </tr>
+                
+        </table>
+   </section>
+    <section id="tran">
+        <h2>6. Transformace</h2>
+        <p>Zde popíšu jednotlivé transformace a jaké jsem pro ně použil příkazy</p>
+    </section>
+    <section id="git">
+        <h2>7. GIT</h2>
+        <p>GIT jsem použil jako nástroj pro uložení projektu a na jiném účtu ho používám pro zálohu projektů </p>
+        <p><a href="https://github.com/Mpalavsky/Projekt-ZJ">GIT projekt </a></p>
+    </section>
+    <article>
+        <h4>1. Network</h4><p>První část transformace vypíše nastavení sítě(network) Profilu2 a hodnoty true, false přepíše na pro člověka srozumitelnější hodnoty. Použil jsem <b>select, if</b></p>
+        <h4>2. Region</h4><p>Druhý část transformace vypíše nastavení Region pro všechny profily. Použil jsem <b>select, if, foreach</b>.</p>
+        <h4>3. Sound</h4><p>Třetí část transformace seřadí hodnoty hlasitosti masterVolume od nejmenšího po největší a u hodnot 80 až 100 vypíše hlášku s varováním. Použil jsem <b>select, if, foreach, sort</b>.</p>
+
+
+    </article>
+    <section id="zav">
+        <h2>8. Závěr</h2>
+        <p>Jazyk XML bych použil jako vstupní soubor při konfiguraci telefonu, případně aplikace. Výhodou je přehlednost, jednoznačnost a snadná editace v jakémkoli textovém editoru</p>
+    </section>
+</main>
+
+<footer>			
+	<table>
+		<tr style="background-color: #e2e2e2">
+			<td>Autor:</td>
+			<td>Marek Palavský</td>
+		</tr>
+		<tr>
+			<td>Cvičení:</td>
+			<td>Pondělí 12:15 - Sudý</td>
+		</tr>
+	</table>
+</footer>
+
+</body>
+</html>
+
+   

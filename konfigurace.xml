@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--GIT https://github.com/Mpalavsky/Projekt-ZJ -->
+<?xml-stylesheet type='text/xsl' href='solution.xslt'?>
+
+<phoneSettings>
+  <name>Settings</name>
+  
+  <profiles>
+    <profile name="profile_1" id="1">
+      
+      <network>
+        <bluetooth>true</bluetooth>
+        <mobileNetwork>true</mobileNetwork>
+        <hotspot password="ssssssffffssss" maxCountOfConnection ="10" state="true"/>
+        <tethering>false</tethering>
+        <wifi>true</wifi>
+        <gps>false</gps>
+        <vpn ip="192.150.124.122" state ="true"/>
+      </network>
+      
+      <sound>
+        <soundProfile>mute</soundProfile>
+        <masterVolume>40</masterVolume>
+        <keysVolume>50</keysVolume> 
+      </sound>
+      
+      <notification>
+        <ringtones tone ="melody1"/>
+        <vibrations>3</vibrations>
+        <soundWithVibrations>true</soundWithVibrations>
+        <doNotDisturb>false</doNotDisturb>
+      </notification>
+     
+      <lockscreen status="true">
+        <notifOnLockscreen>true</notifOnLockscreen>
+        <clockType>false</clockType>
+        <lockType>false</lockType>
+      </lockscreen>
+      
+      <display>
+        <scheme>light</scheme>
+        <wallpaper picture="pic1"/>
+        <font fontType ="arial" size="5"/>
+        <brightness>80</brightness>
+        <autoflipScreen>true</autoflipScreen>
+        <intervalOfScreenStandbyTime>15</intervalOfScreenStandbyTime>
+        <screensaver variant="gallery" state="true"/>
+        <color type="monochrome" state="false"/>
+      </display>
+      
+      <region>
+        <language>czech</language>        
+        <timeFormat>24</timeFormat>
+        <useNetwork>false</useNetwork>
+      </region>
+      
+      <secure>
+        <useBiometric>true</useBiometric>
+        <forgetPasswords periodInDays="30" state ="true"/>
+        <usePin>true</usePin>  
+      </secure>
+      
+      <camera>
+        <format>jpeg</format>
+        <flash>auto</flash>
+        <timer delay="10" state="true"/>
+        
+        <effects>
+          <hdr status ="true"/>
+          <sepia status ="false"/>
+          <distorted status ="false"/>
+        </effects> 
+        
+      </camera>
+      
+      <general>
+        <memoryPriority>sd</memoryPriority>
+        <ledFlashlight>false</ledFlashlight>
+      </general>
+      
+    </profile>
+
+    <profile name="profile_2" id="2">
+
+      <network>
+        <bluetooth>true</bluetooth>
+        <mobileNetwork>false</mobileNetwork>
+        <hotspot password="aaasssddff" maxCountOfConnection ="8" state="true"/>
+        <tethering>false</tethering>
+        <wifi>true</wifi>
+        <gps>false</gps>
+        <vpn ip="192.100.104.122" state="true"/>
+      </network>
+
+      <sound>
+        <soundProfile>2</soundProfile>
+        <masterVolume>70</masterVolume>
+        <keysVolume>30</keysVolume>
+      </sound>
+
+      <notification>
+        <ringtones tone ="melody1"/>
+        <vibrations>1</vibrations>
+        <soundWithVibrations>false</soundWithVibrations>
+        <doNotDisturb>true</doNotDisturb>
+      </notification>
+
+      <lockscreen status="true">
+        <notifOnLockscreen>true</notifOnLockscreen>
+        <clockType>false</clockType>
+        <lockType>false</lockType>
+      </lockscreen>
+
+      <display>
+        <scheme>light</scheme>
+        <wallpaper picture="pic3"/>
+        <font fontType ="timesnewromain" size="5"/>
+        <brightness>70</brightness>
+        <autoflipScreen>false</autoflipScreen>
+        <intervalOfScreenStandbyTime>15</intervalOfScreenStandbyTime>
+        <screensaver variant="gallery" state="true"/>
+        <color type="inverted" state="false"/>
+      </display>
+
+      <region>
+        <language>english</language>
+        <timeFormat>12</timeFormat>
+        <useNetwork>false</useNetwork>
+      </region>
+
+      <secure>
+        <useBiometric>true</useBiometric>
+        <forgetPasswords periodInDays="30"  state="true"/>
+        <usePin>false</usePin>
+      </secure>
+
+      <camera>
+        <format>png</format>
+        <flash>true</flash>
+        <timer delay="20" state="true"/>
+
+        <effects>
+          <hdr status ="true"/>
+          <sepia status ="true"/>
+          <distorted status ="false"/>
+        </effects>
+
+      </camera>
+
+      <general>
+        <memoryPriority>internal</memoryPriority>
+        <ledFlashlight>false</ledFlashlight>
+      </general>
+
+    </profile>
+
+    <profile name="profile_3" id="3">
+
+      <network>
+        <bluetooth>true</bluetooth>
+        <mobileNetwork>true</mobileNetwork>
+        <hotspot password="sdddddddddd" maxCountOfConnection ="5" state="true"/>
+        <tethering>true</tethering>
+        <wifi>false</wifi>
+        <gps>true</gps>
+        <vpn ip="192.150.124.122" state="true"/>
+      </network>
+
+      <sound>
+        <soundProfile>5</soundProfile>
+        <masterVolume>60</masterVolume>
+        <keysVolume>90</keysVolume>
+      </sound>
+
+      <notification>
+        <ringtones tone ="melody1"/>
+        <vibrations>3</vibrations>
+        <soundWithVibrations>true</soundWithVibrations>
+        <doNotDisturb>false</doNotDisturb>
+      </notification>
+
+      <lockscreen status="false">
+        <notifOnLockscreen>false</notifOnLockscreen>
+        <clockType>false</clockType>
+        <lockType>false</lockType>
+      </lockscreen>
+
+      <display>
+        <scheme>dark</scheme>
+        <wallpaper picture="pic5"/>
+        <font fontType ="calibri" size="6"/>
+        <brightness>70</brightness>
+        <autoflipScreen>true</autoflipScreen>
+        <intervalOfScreenStandbyTime>5</intervalOfScreenStandbyTime>
+        <screensaver variant="forest" state="true"/>
+        <color type="inverted" state="false"/>
+      </display>
+
+      <region>
+        <language>czech</language>
+        <timeFormat>24</timeFormat>
+        <useNetwork>true</useNetwork>
+      </region>
+
+      <secure>
+        <useBiometric>false</useBiometric>
+        <forgetPasswords periodInDays="20" state="true"/>
+        <usePin>true</usePin>
+      </secure>
+
+      <camera>
+        <format>raw</format>
+        <flash>false</flash>
+        <timer delay="50" state="true"/>
+
+        <effects>
+          <hdr status ="true"/>
+          <sepia status ="false"/>
+          <distorted status ="true"/>
+        </effects>
+
+      </camera>
+
+      <general>
+        <memoryPriority>sd</memoryPriority>
+        <ledFlashlight>true</ledFlashlight>
+      </general>
+
+    </profile>
+
+    <profile name="profile_4" id="4">
+
+      <network>
+        <bluetooth>true</bluetooth>
+        <mobileNetwork>false</mobileNetwork>
+        <hotspot password="uuuuuuuuuu" maxCountOfConnection ="10" state="true"/>
+        <tethering>true</tethering>
+        <wifi>false</wifi>
+        <gps>true</gps>
+        <vpn ip="192.150.124.122" state="true"/>
+      </network>
+
+      <sound>
+        <soundProfile>mute</soundProfile>
+        <masterVolume>80</masterVolume>
+        <keysVolume>0</keysVolume>
+      </sound>
+
+      <notification>
+        <ringtones tone ="melody4"/>
+        <vibrations>2</vibrations>
+        <soundWithVibrations>true</soundWithVibrations>
+        <doNotDisturb>true</doNotDisturb>
+      </notification>
+
+      <lockscreen status="true">
+        <notifOnLockscreen>false</notifOnLockscreen>
+        <clockType>false</clockType>
+        <lockType>true</lockType>
+      </lockscreen>
+
+      <display>
+        <scheme>grey</scheme>
+        <wallpaper picture="pic4"/>
+        <font fontType ="calibri" size="6"/>
+        <brightness>70</brightness>
+        <autoflipScreen>true</autoflipScreen>
+        <intervalOfScreenStandbyTime>5</intervalOfScreenStandbyTime>
+        <screensaver variant="forest" state="true"/>
+        <color type="inverted" state="false"/>
+      </display>
+
+      <region>
+        <language>spanish</language>
+        <timeFormat>12</timeFormat>
+        <useNetwork>false</useNetwork>
+      </region>
+
+      <secure>
+        <useBiometric>true</useBiometric>
+        <forgetPasswords periodInDays="20" state="true"/>
+        <usePin>true</usePin>
+      </secure>
+
+      <camera>
+        <format>png</format>
+        <flash>auto</flash>
+        <timer delay="8" state="true"/>
+
+        <effects>
+          <hdr status ="false"/>
+          <sepia status ="true"/>
+          <distorted status ="true"/>
+        </effects>
+
+      </camera>
+
+      <general>
+        <memoryPriority>internal</memoryPriority>
+        <ledFlashlight>true</ledFlashlight>
+      </general>
+
+    </profile>
+
+    <profile name="profile_5" id="5">
+
+      <network>
+        <bluetooth>false</bluetooth>
+        <mobileNetwork>true</mobileNetwork>
+        <hotspot password="iiiiiiiiiiiii" maxCountOfConnection ="5" state="true"/>
+        <tethering>true</tethering>
+        <wifi>true</wifi>
+        <gps>true</gps>
+        <vpn ip="192.150.124.122" state="true"/>
+      </network>
+
+      <sound>
+        <soundProfile>5</soundProfile>
+        <masterVolume>50</masterVolume>
+        <keysVolume>20</keysVolume>
+      </sound>
+
+      <notification>
+        <ringtones tone ="melody10"/>
+        <vibrations>4</vibrations>
+        <soundWithVibrations>true</soundWithVibrations>
+        <doNotDisturb>true</doNotDisturb>
+      </notification>
+
+      <lockscreen status="false">
+        <notifOnLockscreen>false</notifOnLockscreen>
+        <clockType>false</clockType>
+        <lockType>false</lockType>
+      </lockscreen>
+
+      <display>
+        <scheme>light</scheme>
+        <wallpaper picture="pic8"/>
+        <font fontType ="calibri" size="6"/>
+        <brightness>60</brightness>
+        <autoflipScreen>true</autoflipScreen>
+        <intervalOfScreenStandbyTime>5</intervalOfScreenStandbyTime>
+        <screensaver variant="sea" state="true"/>
+        <color type="inverted" state="false"/>
+      </display>
+
+      <region>
+        <language>pascal</language>
+        <timeFormat>24</timeFormat>
+        <useNetwork>false</useNetwork>
+      </region>
+
+      <secure>
+        <useBiometric>true</useBiometric>
+        <forgetPasswords periodInDays="20" state="true"/>
+        <usePin>true</usePin>
+      </secure>
+
+      <camera>
+        <format>raw</format>
+        <flash>true</flash>
+        <timer delay="50" state="true"/>
+
+        <effects>
+          <hdr status ="false"/>
+          <sepia status ="false"/>
+          <distorted status ="false"/>
+        </effects>
+
+      </camera>
+
+      <general>
+        <memoryPriority>internal</memoryPriority>
+        <ledFlashlight>false</ledFlashlight>
+      </general>
+
+    </profile>
+    
+    
+    
+    
+    
+    
+  </profiles>
+</phoneSettings>
+
+  

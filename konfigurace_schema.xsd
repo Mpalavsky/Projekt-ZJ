@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:element name="phoneSettings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string" />
+        <xs:element name="profiles"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="profiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="profile"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="profile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="network"/>
+        <xs:element name="sound"/>
+        <xs:element name="notification"/>
+        <xs:element name="lockscreen"/>
+        <xs:element name="display"/>
+        <xs:element name="region"/>
+        <xs:element name="secure"/>
+        <xs:element name="camera"/>
+        <xs:element name="general"/>            
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attribute name="id" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+
+
+
+
+  <!--Network-->
+
+  <xs:element name="network">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bluetooth" type="xs:boolean"/>
+        <xs:element name="mobileNetwork" type="xs:boolean"/>
+        <xs:element name="hotspot"/>
+        <xs:element name="tethering" type="xs:boolean"/>
+        <xs:element name="wifi" type="xs:boolean"/>
+        <xs:element name="gps" type="xs:boolean"/>
+        <xs:element name="vpn"/>
+      </xs:sequence>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--Hotspot-->
+   
+  <xs:element name="hotspot">
+    <xs:complexType>
+      <xs:sequence>       
+      </xs:sequence>
+      <xs:attribute name="password" type="xs:string"/>
+      <xs:attribute name="maxCountOfConnection" type="xs:integer"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--vpn-->
+ 
+  <xs:element name="vpn">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="ip" type="xs:string"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--sound-->
+  
+  <xs:element name="sound">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="soundProfile" type="typeSoundProfile"/>
+        <xs:element name="masterVolume" type="type0to100"/>
+        <xs:element name="keysVolume" type="type0to100"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Notification-->
+
+  <xs:element name="notification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ringtone" type="typeTone"/>
+        <xs:element name="vibrations" type="type0to10"/>
+        <xs:element name="soundWithVibrations" type="xs:boolean"/>
+        <xs:element name="doNotDisturb" type="xs:boolean"/>       
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--Lockscreen-->
+  <xs:element name="lockscreen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="notifOnLockscreen" type="xs:boolean"/>
+        <xs:element name="clockType" type="xs:boolean"/>
+        <xs:element name="locktype" type="xs:boolean"/>        
+      </xs:sequence>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Display-->
+  
+  <xs:element name="display">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="scheme" type="typeScheme"/>
+        <xs:element name="wallpaper"/>
+        <xs:element name="font"/>
+        <xs:element name="brightness" type="type0to100"/>
+        <xs:element name="autoflipScreen" type="xs:boolean"/>
+        <xs:element name="intervalOfScreenStandbyTime" type="xs:integer"/>
+        <xs:element name="screensaver"/>
+        <xs:element name="color"/>        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="wallpaper">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="picture" type="typePicture"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="font">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="fontType" type="typeFontType"/>
+      <xs:attribute name="size" type="type0to100"/>
+    </xs:complexType>
+  </xs:element>  
+
+  <xs:element name="screensaver">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="variant" type="typeVariant"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="color">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="type" type="typeColor"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <!--Region-->
+
+  <xs:element name="region">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="language" type="typeLanguage"/>
+        <xs:element name="timeFormats" type="typeTimeFormat"/>
+        <xs:element name="useNetwork" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <!--Secure-->
+
+  <xs:element name="secure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="useBiometric" type="xs:boolean"/>
+        <xs:element name="forgetPasswords"/>
+        <xs:element name="usePin" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="forgetPasswords">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="periodInDays" type="xs:integer"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+  <!--Camera-->
+
+  <xs:element name="camera">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="format" type="typeFormat"/>
+        <xs:element name="flash" type="typeFlash"/>
+        <xs:element name="timer"/>
+        <xs:element name="effects"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <xs:element name="timer">
+    <xs:complexType>
+      <xs:sequence>
+      </xs:sequence>
+      <xs:attribute name="delay" type="xs:integer"/>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="effects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hdr"/>
+        <xs:element name="sepia"/>
+        <xs:element name="distorted"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="hdr">
+    <xs:complexType>
+      <xs:sequence></xs:sequence>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sepia">
+    <xs:complexType>
+      <xs:sequence></xs:sequence>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distorted">
+    <xs:complexType>
+      <xs:sequence></xs:sequence>
+      <xs:attribute name="state" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <!--General-->
+
+  <xs:element name="general">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="memoryPriority" type="typeMemory"/>
+        <xs:element name="ledFlashlight" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+
+  <xs:simpleType name="typeTone">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="melody1"/>
+      <xs:enumeration value="melody3"/>
+      <xs:enumeration value="melody5"/>
+      <xs:enumeration value="melody4"/>
+      <xs:enumeration value="melody10"/>
+      <xs:enumeration value="melody7"/>
+      <xs:enumeration value="melody8"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="typeSoundProfile">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mute"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>     
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeScheme">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="light"/>
+      <xs:enumeration value="dark"/>
+      <xs:enumeration value="grey"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typePicture">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="pic1"/>
+      <xs:enumeration value="pic2"/>
+      <xs:enumeration value="pic3"/>
+      <xs:enumeration value="pic4"/>
+      <xs:enumeration value="pic5"/>
+      <xs:enumeration value="pic6"/>
+      <xs:enumeration value="pic7"/>
+      <xs:enumeration value="pic8"/>
+      <xs:enumeration value="pic9"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeFontType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="calibri"/>
+      <xs:enumeration value="arial"/>
+      <xs:enumeration value="timesnewromain"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="typeTimeFormat">
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="24"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="type0to100">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="type0to10">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeLanguage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="czech"/>
+      <xs:enumeration value="english"/>
+      <xs:enumeration value="spanish"/>
+      <xs:enumeration value="pascal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeVariant">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="forest"/>
+      <xs:enumeration value="sea"/>
+      <xs:enumeration value="gallery"/>      
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeColor">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="monochrome"/>
+      <xs:enumeration value="inverted"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="jpeg"/>
+      <xs:enumeration value="gif"/>
+      <xs:enumeration value="raw"/>
+      <xs:enumeration value="png"/>      
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeFlash">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true"/>
+      <xs:enumeration value="false"/>
+      <xs:enumeration value="auto"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeMemory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="sd"/>
+      <xs:enumeration value="internal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+
+
+
+</xs:schema>
